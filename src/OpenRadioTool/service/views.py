@@ -1,23 +1,20 @@
-from django.core import serializers
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import generic
+from service.JSONView import JSONView
+
 from service.models import Traffic
 
 
-def index(request):
-    """
-    Index
-    :param request: HTTP Request handled
-    """
-    context = {'title': 'Service Display'}
-    return render(request, 'service/index.html', context)
+class IndexView(generic.TemplateView):
+    template_name = 'service/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['title'] = 'Service Display'
+        return context
 
 
-def traffic_json(request):
-    """
-    Return the current traffic information as json data block
+class JSONTrafficView(JSONView):
+    model = Traffic
 
-    :param request: HTTP Request to handle
-    :return: A json formatted plain string containing the current traffic information
-    """
-    return HttpResponse(serializers.serialize("json", Traffic.objects.all()))

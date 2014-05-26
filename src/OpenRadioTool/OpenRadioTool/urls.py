@@ -8,6 +8,6 @@ urlpatterns = patterns('',
     # url(r'^$', 'OpenRadioTool.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'service/', include('service.urls')),
+    url(r'service/', include('service.urls', namespace="service")),
     url(r'^admin/', include(admin.site.urls)),
 )
