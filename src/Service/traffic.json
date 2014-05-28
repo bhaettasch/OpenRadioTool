@@ -1,0 +1,54 @@
+[
+    {
+        "fields": {
+            "direction": "Bensheim - Lautern",
+            "prio": true,
+            "what": "DANGER",
+            "text": "Gefahr durch Wildschweine auf der Stra\u00dfe. Bitte fahren sie \u00e4u\u00dferst rechts und \u00fcberholen sie nicht.",
+            "created": "2014-05-25T00:00:00Z",
+            "updated": "2014-05-25T22:18:01.366Z",
+            "where": "B46"
+        },
+        "model": "service.traffic",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "direction": "Frankfurt - K\u00f6ln",
+            "prio": false,
+            "what": "ROADWORKS",
+            "text": "Behinderungen durch eine Wanderbaustelle, die nicht \u00fcberholt werden m\u00f6chte...",
+            "created": "2014-05-25T00:00:00Z",
+            "updated": "2014-05-25T22:03:43.745Z",
+            "where": "A3"
+        },
+        "model": "service.traffic",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "direction": "Heidelberg - Darmstadt",
+            "prio": false,
+            "what": "JAM",
+            "text": "5 km Stau zwischen Anschlussstelle Bensheim und Seeheim-Jugendheim.",
+            "created": "2014-05-25T18:27:56Z",
+            "updated": "2014-05-25T20:35:17.043Z",
+            "where": "A5"
+        },
+        "model": "service.traffic",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "direction": "",
+            "prio": false,
+            "what": "PFULL",
+            "text": "Die Polizei Bensheim meldet: Parkplatz P2 ist \u00fcberf\u00fcllt. Bitte auf die Parkpl\u00e4tze P3 und P5 ausweichen.",
+            "created": "2014-05-25T00:00:00Z",
+            "updated": "2014-05-25T22:02:16.756Z",
+            "where": "P2"
+        },
+        "model": "service.traffic",
+        "pk": 2
+    }
+]

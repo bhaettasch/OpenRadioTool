@@ -1,0 +1,10 @@
+{{current}} of {{count}}
+
+<br><br>
+
+{{currentData.fields.where}} {{currentData.filds.what}}
+
+<p>{{currentData.fields.text}}</p>
+
+<a href="#/traffic/{{currentID - 1}}" ng-show="hasPrevious()">Zurück</a> &middot;
+<a href="#/traffic/{{currentID + 1}}" ng-show="hasNext()">Weiter</a>

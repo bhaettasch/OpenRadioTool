@@ -2,15 +2,17 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('ORTServiceAPP', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+  'ORTServiceAPP.filters',
+  'ORTServiceAPP.services',
+  'ORTServiceAPP.directives',
+  'ORTServiceAPP.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/start', {templateUrl: 'partials/start.html'});
+  $routeProvider.when('/traffic', {templateUrl: 'partials/traffic_overview.html', controller: 'TrafficCtrl'});
+  $routeProvider.when('/traffic/:id', {templateUrl: 'partials/traffic_detail.html', controller: 'TrafficSingleCtrl'});
+  $routeProvider.when('/weather', {templateUrl: 'partials/weather.html', controller: 'WeatherCtrl'});
+  $routeProvider.otherwise({redirectTo: '/start'});
 }]);

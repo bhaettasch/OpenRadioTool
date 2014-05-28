@@ -2,10 +2,33 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+var trafficPath = "traffic.json";
+
+angular.module('ORTServiceAPP.controllers', [])
+  .controller('TrafficCtrl', ['$scope', '$http', function($scope, $http) {
+        $http.get(trafficPath).success(function(data) {
+            $scope.data = data;
+        });
 
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
+  .controller('TrafficSingleCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+        $scope.currentID = parseInt($routeParams.id);
+        $scope.current = (parseInt($scope.currentID) + 1);
+
+        $http.get(trafficPath).success(function(data) {
+            $scope.data = data;
+            $scope.currentData = $scope.data[$scope.currentID];
+            $scope.count = $scope.data.length;
+        });
+
+        $scope.hasPrevious = function() {
+            return $scope.current > 1;
+        };
+
+        $scope.hasNext = function() {
+            return $scope.current < $scope.count;
+        };
+  }])
+  .controller('WeatherCtrl', ['$scope', function($scope) {
 
   }]);
