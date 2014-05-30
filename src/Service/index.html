@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>-->
 
-  <link rel="stylesheet" href="css/app.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css"/>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -25,12 +26,20 @@
 
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/traffic">Traffic</a></li>
-    <li><a href="#/weather">Weather</a></li>
-  </ul>
+    <div id="head">
+        <div id="logoSpace">OpenRadioTool</div>
+        <div id="mainNav">
+            <div class="mainNavEntry">
+                <a href="#/traffic">Verkehr</a>
+            </div>
 
-  <div ng-view></div>
+            <div class="mainNavEntry">
+                <a href="#/weather">Wetter</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" ng-view></div>
 
   <!--<div>Angular seed app: v<span app-version></span></div>-->
 
