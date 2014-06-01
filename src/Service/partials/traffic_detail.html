@@ -1,10 +1,43 @@
-{{current}} of {{count}}
 
-<br><br>
 
-{{currentData.fields.where}} {{currentData.filds.what}}
 
-<p>{{currentData.fields.text}}</p>
 
-<a href="#/traffic/{{currentID - 1}}" ng-show="hasPrevious()">Zurück</a> &middot;
-<a href="#/traffic/{{currentID + 1}}" ng-show="hasNext()">Weiter</a>
+<div id="sidebar">
+    <b>Verkehrsmeldungen</b>
+    <br>
+    <br>
+    <a href="#/traffic" data-icon="&#xe112;"> Zurück zur Übersicht</a>
+</div>
+
+<div style="position:absolute;width:200px;right:50px;">
+    <h2>{{current}} / {{count}}</h2>
+
+    <a href="#/traffic/{{currentID - 1}}" ng-class="{active: hasPrevious()}" data-icon="&#xe0fe;" class="bigButton"></a>
+    <a href="#/traffic/{{currentID + 1}}" ng-class="{active: hasNext()}" data-icon="&#xe11c;"  class="bigButton"></a>
+</div>
+
+
+<div id="content" style="right:300px;">
+
+    <div style="font-size:1.3em">
+        <span style="color:#a7a7a7">Aktuelle Meldung:</span>
+
+        <h2>{{currentData.where}} {{currentData.direction}}</h2>
+
+        <h3 ng-show="currentData.prio" data-icon="&#xe0b7;" style="color:#F5003D"> Eilmeldung</h3>
+
+        <h3>{{currentData.what}}</h3>
+
+        <p>{{currentData.text}}</p>
+    </div>
+
+    <div ng-show="hasNext()" style="color:#a7a7a7;border-top:1px dashed #a7a7a7;">
+        Nächste Meldung:
+        <h2>{{nextData.where}} {{nextData.direction}}</h2>
+
+        <h3>{{nextData.what}}</h3>
+
+        <p>{{nextData.text}}</p>
+    </div>
+
+</div>

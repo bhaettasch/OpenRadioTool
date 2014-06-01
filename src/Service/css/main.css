@@ -1,5 +1,28 @@
 /* app css stylesheet */
 
+@font-face {
+    font-family: 'Metrize-Icons';
+    src:url('fonts/Metrize-Icons.eot');
+    src:url('fonts/Metrize-Icons.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Metrize-Icons.woff') format('woff'),
+    url('fonts/Metrize-Icons.ttf') format('truetype'),
+    url('fonts/Metrize-Icons.svg#Metrize-Icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'Metrize-Icons';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -60,6 +83,22 @@ body {
     left: 320px;
 }
 
+.bigButton {
+    font-size: 30px;
+    text-align: left;
+    padding: 20px;
+    height: 60px;
+    width: 100px;
+    background-color: #DDDDDD;
+    color: #ffffff;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.active {
+    background-color: #7094FF;
+}
 /*
 .menu {
   list-style: none;

@@ -17,8 +17,12 @@ angular.module('ORTServiceAPP.controllers', [])
 
         $http.get(trafficPath).success(function(data) {
             $scope.data = data;
-            $scope.currentData = $scope.data[$scope.currentID];
+            $scope.currentData = $scope.data[$scope.currentID].fields;
             $scope.count = $scope.data.length;
+            if($scope.hasNext())
+            {
+                $scope.nextData = $scope.data[$scope.currentID+1].fields;
+            }
         });
 
         $scope.hasPrevious = function() {
