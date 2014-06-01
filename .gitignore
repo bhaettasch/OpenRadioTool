@@ -54,3 +54,5 @@ docs/_build/
 
 #PyCharm
 .idea/
+resources/Metrize_Icons/.DS_Store
+*.DS_Store
