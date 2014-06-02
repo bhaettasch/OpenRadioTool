@@ -61,10 +61,12 @@ angular.module('ORTServiceAPP.controllers', [])
                     break;
                 case 13:
                 case 32:
+                case 40:
                     if($scope.hasNext())
                         $location.path('/traffic/'+($scope.currentID+1)).replace();
                     break;
                 case 107:
+                case 38:
                     if($scope.hasPrevious())
                         $location.path('/traffic/'+($scope.currentID-1)).replace();
                     break;
