@@ -1,7 +1,19 @@
 {% extends "service/base.html" %}
 
+{% load staticfiles %}
+
 {% block title %}{{ title }} | {{ site_title|default:_('OpenRadioTool') }}{% endblock %}
+
+{% block libs %}
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+{% endblock %}
+
+
 
 {% block main %}
 This is just a placeholder...
+<div id="main" ng-view>
+</div>
+
+
 {% endblock %}

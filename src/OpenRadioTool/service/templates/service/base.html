@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OpenRadioTool {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'service/css/main.css' %}" />
+
+    {% block libs %}{% endblock %}
+
 </head>
 <body>
 {% block main %}{% endblock %}
