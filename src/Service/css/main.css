@@ -86,10 +86,10 @@ body {
 
 .bigButton {
     font-size: 30px;
-    text-align: left;
-    padding: 20px;
-    height: 60px;
-    width: 100px;
+    text-align: center;
+    padding: 30px;
+    height: 30px;
+    width: 40px;
     background-color: #DDDDDD;
     color: #ffffff;
     display: block;

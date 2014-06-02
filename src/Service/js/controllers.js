@@ -5,13 +5,29 @@
 var trafficPath = "traffic.json";
 
 angular.module('ORTServiceAPP.controllers', [])
-  .controller('TrafficCtrl', ['$scope', '$http', function($scope, $http) {
+  .controller('TrafficCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
         $http.get(trafficPath).success(function(data) {
             $scope.data = data;
         });
 
+        angular.element(window).on('keydown', function(event) {
+            switch(event.keyCode)
+            {
+                case 97:
+                    $location.path('/traffic').replace();
+                    break;
+                case 98:
+                    $location.path('/weather').replace();
+                    break;
+                case 13:
+                case 32:
+                    $location.path('/traffic/0').replace();
+                    break;
+            }
+            $scope.$apply();
+        });
   }])
-  .controller('TrafficSingleCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+  .controller('TrafficSingleCtrl', ['$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location) {
         $scope.currentID = parseInt($routeParams.id);
         $scope.current = (parseInt($scope.currentID) + 1);
 
@@ -32,7 +48,44 @@ angular.module('ORTServiceAPP.controllers', [])
         $scope.hasNext = function() {
             return $scope.current < $scope.count;
         };
-  }])
-  .controller('WeatherCtrl', ['$scope', function($scope) {
 
+        angular.element(window).on('keydown', function(event) {
+            switch(event.keyCode)
+            {
+                case 109:
+                case 97:
+                    $location.path('/traffic').replace();
+                    break;
+                case 98:
+                    $location.path('/weather').replace();
+                    break;
+                case 13:
+                case 32:
+                    if($scope.hasNext())
+                        $location.path('/traffic/'+($scope.currentID+1)).replace();
+                    break;
+                case 107:
+                    if($scope.hasPrevious())
+                        $location.path('/traffic/'+($scope.currentID-1)).replace();
+                    break;
+                default:
+                    console.log(event.keyCode);
+                    break;
+            }
+            $scope.$apply();
+        });
+  }])
+  .controller('WeatherCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+        angular.element(window).on('keydown', function(event) {
+            switch(event.keyCode)
+            {
+                case 97:
+                    $location.path('/traffic').replace();
+                    break;
+                case 98:
+                    $location.path('/weather').replace();
+                    break;
+            }
+            $scope.$apply();
+        });
   }]);
