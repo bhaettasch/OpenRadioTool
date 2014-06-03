@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
 class Traffic(models.Model):
     def __unicode__(self):
         """
@@ -74,3 +75,36 @@ class Traffic(models.Model):
             verbose_name_plural = "Verkehrsmeldungen"
             ordering = ['-prio', 'where']
 
+
+class WeatherForecast(models.Model):
+    weather = models.CharField("Wetter", max_length=200)
+    minTemperature = models.FloatField("Minimale Temperatur")
+    maxTemperature = models.FloatField("Maximale Temperatur")
+    humidity = models.FloatField("Feuchtigkeit", help_text='%')
+    symbol = models.CharField(max_length=3)
+    begin = models.DateTimeField()
+    end = models.DateTimeField()
+
+    class Meta:
+        verbose_name = "Wettervorhersage"
+        verbose_name_plural = "Wettervorhersagen"
+        ordering = ['begin']
+
+
+class WeatherCurrent(models.Model):
+    def save(self):
+        """
+        Store current entry in database and update timestamps accordingly
+        """
+        self.updated = datetime.datetime.today()
+        super(WeatherCurrent, self).save()
+
+    weather = models.CharField("Wetter", max_length=200)
+    temperature = models.FloatField("Aktuelle Temperatur")
+    humidity = models.FloatField("Feuchtigkeit", help_text='%')
+    symbol = models.CharField(max_length=3)
+    updated = models.DateTimeField('Letzte Aktualisierung', editable=False)
+
+    class Meta:
+        verbose_name = "Aktuelles Wetter"
+        verbose_name_plural = "Aktuelles Wetter"

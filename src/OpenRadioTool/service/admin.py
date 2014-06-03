@@ -1,5 +1,5 @@
 from django.contrib import admin
-from service.models import Traffic
+from service.models import Traffic, WeatherForecast, WeatherCurrent
 
 
 class TrafficAdmin(admin.ModelAdmin):
@@ -16,3 +16,6 @@ class TrafficAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Traffic, TrafficAdmin)
+
+admin.site.register(WeatherForecast)
+admin.site.register(WeatherCurrent)
