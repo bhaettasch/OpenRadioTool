@@ -1,1 +1,31 @@
-Weather partial. To be done...
+<div id="sidebar">
+    <b>Wetter</b>
+<!--    <br>
+    <br>
+    <a href="#/traffic/0"  data-icon="&#xe107;"> Moderation starten</a>-->
+</div>
+
+
+<div id="content">
+    <span style="color:#a7a7a7">Aktuell:</span>
+
+    <div style="font-size:1.4em">
+    <table>
+        <tr><td>Temperatur:</td><td>{{currentData.temperature}} °C</td></tr>
+        <tr><td>Wetterlage:</td><td><img ng-src="img/weather/{{currentData.symbol}}.png" style="vertical-align: middle"> {{currentData.weather}}</td></tr>
+        <tr><td>Feuchtigkeit:</td><td>{{currentData.humidity}} %</td></tr>
+    </table>
+    </div>
+
+    <div style="margin-top:50px;">
+        <span style="color:#a7a7a7">Vorhersage:</span>
+        <div style="margin-top:10px;">
+            <table ng-repeat="f in forecastData" style="float:left;background-color: #e3e3e3;margin-right:20px;width:300px;margin-bottom:20px;">
+                <tr><td>Temperatur:</td><td>{{f.minTemperature}} - {{f.maxTemperature}} °C</td></tr>
+                <tr><td>Wetterlage:</td><td><img ng-src="img/weather/{{f.symbol}}.png" style="vertical-align: middle"> {{f.weather}}</td></tr>
+                <tr><td>Feuchtigkeit:</td><td>{{f.humidity}} %</td></tr>
+                <tr><td>Ab:</td><td>{{f.begin | date:'dd.MM HH:mm'}} Uhr</td></tr>
+            </table>
+        </div>
+    </div>
+</div>

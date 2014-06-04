@@ -3,6 +3,8 @@
 /* Controllers */
 
 var trafficPath = "traffic.json";
+var weatherCurrentPath = "weatherCurrent.json";
+var weatherForecastPath = "weatherForecast.json";
 
 angular.module('ORTServiceAPP.controllers', [])
   .controller('TrafficCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
@@ -78,6 +80,14 @@ angular.module('ORTServiceAPP.controllers', [])
         });
   }])
   .controller('WeatherCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+        $http.get(weatherCurrentPath).success(function(data) {
+            $scope.currentData = data;
+        });
+
+        $http.get(weatherForecastPath).success(function(data) {
+            $scope.forecastData = data.objects;
+        });
+
         angular.element(window).on('keydown', function(event) {
             switch(event.keyCode)
             {

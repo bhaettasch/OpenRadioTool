@@ -1,0 +1,98 @@
+{"meta": {
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total_count": 9
+}, "objects": [
+    {
+        "begin": "2014-06-04T09:00:00",
+        "humidity": 88.0,
+        "id": 13,
+        "maxTemperature": 22.15,
+        "minTemperature": 19.51,
+        "resource_uri": "",
+        "symbol": "04d",
+        "weather": "Überwiegend bewölkt"
+    },
+    {
+        "begin": "2014-06-04T12:00:00",
+        "humidity": 74.0,
+        "id": 14,
+        "maxTemperature": 22.53,
+        "minTemperature": 20.02,
+        "resource_uri": "",
+        "symbol": "04d",
+        "weather": "Überwiegend bewölkt"
+    },
+    {
+        "begin": "2014-06-04T15:00:00",
+        "humidity": 73.0,
+        "id": 15,
+        "maxTemperature": 22.24,
+        "minTemperature": 19.87,
+        "resource_uri": "",
+        "symbol": "04d",
+        "weather": "Überwiegend bewölkt"
+    },
+    {
+        "begin": "2014-06-04T18:00:00",
+        "humidity": 95.0,
+        "id": 16,
+        "maxTemperature": 17.44,
+        "minTemperature": 15.2,
+        "resource_uri": "",
+        "symbol": "10d",
+        "weather": "leichter Regen"
+    },
+    {
+        "begin": "2014-06-04T21:00:00",
+        "humidity": 96.0,
+        "id": 17,
+        "maxTemperature": 16.31,
+        "minTemperature": 14.2,
+        "resource_uri": "",
+        "symbol": "10n",
+        "weather": "leichter Regen"
+    },
+    {
+        "begin": "2014-06-05T00:00:00",
+        "humidity": 93.0,
+        "id": 18,
+        "maxTemperature": 14.34,
+        "minTemperature": 12.36,
+        "resource_uri": "",
+        "symbol": "03n",
+        "weather": "Überwiegend bewölkt"
+    },
+    {
+        "begin": "2014-06-05T03:00:00",
+        "humidity": 92.0,
+        "id": 19,
+        "maxTemperature": 12.1,
+        "minTemperature": 10.25,
+        "resource_uri": "",
+        "symbol": "01n",
+        "weather": "klarer Himmel"
+    },
+    {
+        "begin": "2014-06-05T06:00:00",
+        "humidity": 94.0,
+        "id": 20,
+        "maxTemperature": 12.89,
+        "minTemperature": 11.18,
+        "resource_uri": "",
+        "symbol": "02d",
+        "weather": "klarer Himmel"
+    },
+    {
+        "begin": "2014-06-05T09:00:00",
+        "humidity": 93.0,
+        "id": 21,
+        "maxTemperature": 14.85,
+        "minTemperature": 13.27,
+        "resource_uri": "",
+        "symbol": "02d",
+        "weather": "ein paar Wolken"
+    }
+]}
