@@ -83,7 +83,6 @@ class WeatherForecast(models.Model):
     humidity = models.FloatField("Feuchtigkeit", help_text='%')
     symbol = models.CharField(max_length=3)
     begin = models.DateTimeField()
-    end = models.DateTimeField()
 
     class Meta:
         verbose_name = "Wettervorhersage"
