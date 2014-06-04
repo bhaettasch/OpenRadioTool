@@ -22,16 +22,14 @@
     <div style="font-size:1.3em">
         <span style="color:#a7a7a7">Aktuelle Meldung:</span>
 
+        <h3><span ng-show="currentData.prio" data-icon="&#xe0b7;" style="color:#F5003D"> Eilmeldung</span> {{currentData.what}}</h3>
+
         <h2>{{currentData.where}} {{currentData.direction}}</h2>
-
-        <h3 ng-show="currentData.prio" data-icon="&#xe0b7;" style="color:#F5003D"> Eilmeldung</h3>
-
-        <h3>{{currentData.what}}</h3>
 
         <p>{{currentData.text}}</p>
     </div>
 
-    <div ng-show="hasNext()" style="color:#a7a7a7;border-top:1px dashed #a7a7a7;">
+    <div ng-show="hasNext()" style="color:#bababa;border-top:1px dashed #d7d7d7;margin-top:70px;">
         Nächste Meldung:
         <h2>{{nextData.where}} {{nextData.direction}}</h2>
 
