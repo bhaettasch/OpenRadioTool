@@ -71,9 +71,9 @@ class Traffic(models.Model):
     prio = models.BooleanField("Eilmeldung", default=False, help_text="Besonders wichtige und dringende Meldung")
 
     class Meta:
-            verbose_name = "Verkehrsmeldung"
-            verbose_name_plural = "Verkehrsmeldungen"
-            ordering = ['-prio', 'where']
+        verbose_name = "Verkehrsmeldung"
+        verbose_name_plural = "Verkehrsmeldungen"
+        ordering = ['-prio', 'where']
 
 
 class WeatherForecast(models.Model):
