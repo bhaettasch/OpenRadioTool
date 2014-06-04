@@ -7,10 +7,22 @@ var weatherCurrentPath = "weatherCurrent.json";
 var weatherForecastPath = "weatherForecast.json";
 
 angular.module('ORTServiceAPP.controllers', [])
-  .controller('TrafficCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
-        $http.get(trafficPath).success(function(data) {
-            $scope.data = data;
+  .controller('TrafficCtrl', ['$scope', '$http', '$location', '$interval', function($scope, $http, $location, $interval) {
+        $scope.loadData = function() {
+            $http.get(trafficPath).success(function(data) {
+                $scope.data = data;
+                console.log('loaded');
+            })};
+
+        $scope.loadData();
+
+        $scope.intervalLoader = $interval(function() {$scope.loadData()}, 30 * 1000);
+
+        $scope.$on('$destroy', function() {
+            console.log('close');
+            $interval.cancel($scope.intervalLoader);
         });
+
 
         angular.element(window).on('keydown', function(event) {
             switch(event.keyCode)
@@ -79,13 +91,24 @@ angular.module('ORTServiceAPP.controllers', [])
             $scope.$apply();
         });
   }])
-  .controller('WeatherCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
-        $http.get(weatherCurrentPath).success(function(data) {
-            $scope.currentData = data;
-        });
+  .controller('WeatherCtrl', ['$scope', '$http', '$location', '$interval', function($scope, $http, $location, $interval) {
+        $scope.loadData = function() {
+            $http.get(weatherCurrentPath).success(function(data) {
+                $scope.currentData = data;
+            });
 
-        $http.get(weatherForecastPath).success(function(data) {
-            $scope.forecastData = data.objects;
+            $http.get(weatherForecastPath).success(function(data) {
+                $scope.forecastData = data.objects;
+            });
+        };
+
+        $scope.loadData();
+
+        $scope.intervalLoader = $interval(function() {$scope.loadData()}, 30 * 1000);
+
+        $scope.$on('$destroy', function() {
+            console.log('close');
+            $interval.cancel($scope.intervalLoader);
         });
 
         angular.element(window).on('keydown', function(event) {
